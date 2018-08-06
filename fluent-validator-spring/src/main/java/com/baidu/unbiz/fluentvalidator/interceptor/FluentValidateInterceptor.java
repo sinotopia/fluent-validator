@@ -108,7 +108,7 @@ public class FluentValidateInterceptor implements MethodInterceptor, Initializin
     }
 
     /**
-     * 拦截方法进行验证，如果参数前面存在{@link FluentValid}注解，则进行校验，分一下三中情况：
+     * 拦截方法进行验证，如果参数前面存在{@link FluentValid}注解，则进行校验，分以下三种情况：
      * <ul>
      * <li>1. 普通对象，直接验证</li>
      * <li>2. 列表对象，onEach验证</li>
@@ -120,9 +120,7 @@ public class FluentValidateInterceptor implements MethodInterceptor, Initializin
      * 2) hibernate validator次先校验，然后才是级联验证
      *
      * @param invocation 调用
-     *
      * @return 返回对象
-     *
      * @throws Throwable
      */
     @Override
@@ -220,7 +218,6 @@ public class FluentValidateInterceptor implements MethodInterceptor, Initializin
      * 将需要额外验证的验证器封装为{@link ValidatorChain}
      *
      * @param fluentValid 参数上的注解装饰
-     *
      * @return 验证器链
      */
     private ValidatorChain getAddOnValidatorChain(FluentValid fluentValid) {
@@ -233,7 +230,6 @@ public class FluentValidateInterceptor implements MethodInterceptor, Initializin
      * 将参数注解上的{@link FluentValid}内的<code>value</code>设置的{@link com.baidu.unbiz.fluentvalidator.Validator}在上下文中查询，返回列表
      *
      * @param fluentValid 参数上的注解装饰
-     *
      * @return 验证器列表
      */
     private List<com.baidu.unbiz.fluentvalidator.Validator> getAddOnValidators(FluentValid fluentValid) {
