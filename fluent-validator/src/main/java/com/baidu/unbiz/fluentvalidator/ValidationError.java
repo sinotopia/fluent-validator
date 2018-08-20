@@ -47,7 +47,6 @@ public class ValidationError {
      * 静态构造方法
      *
      * @param errorMsg 错误信息，其他信息可以省略，但是一个错误认为错误消息决不可少
-     *
      * @return ValidationError
      */
     public static ValidationError create(String errorMsg) {

@@ -40,7 +40,6 @@ public class AnnotationValidatorCache {
      *
      * @param registry 验证器对象寻找注册器
      * @param object   待验证对象
-     *
      * @return 待验证属性的验证列表
      */
     public static List<AnnotationValidator> getAnnotationValidator(Registry registry, Object object) {
@@ -98,7 +97,6 @@ public class AnnotationValidatorCache {
      *
      * @param registry 验证器对象寻找注册器
      * @param clazz    待验证类定义
-     *
      * @return <code>AnnotationValidator</code>列表
      */
     private static List<AnnotationValidator> getAllAnnotationValidators(Registry registry, Class<?> clazz) {

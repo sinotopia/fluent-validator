@@ -7,7 +7,7 @@ import com.baidu.unbiz.fluentvalidator.util.CollectionUtil;
 /**
  * 错误结果模板抽象类
  * <p/>
- * 提供了一连串“惰性求值”计算后的“及时求值”收殓出口，泛型&lt;T&gt;代表结果类型
+ * 提供了一连串“惰性求值”计算后的“及时求值”收敛出口，泛型&lt;T&gt;代表结果类型
  *
  * @author zhangxu
  */

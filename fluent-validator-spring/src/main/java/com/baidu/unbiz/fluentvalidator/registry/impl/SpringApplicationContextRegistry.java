@@ -52,7 +52,6 @@ public class SpringApplicationContextRegistry implements Registry, ApplicationCo
      * 调用Spring工具类获取bean
      *
      * @param type 类类型
-     *
      * @return 容器托管的bean字典
      */
     public <T> Map<String, T> findByTypeWithName(Class<T> type) {

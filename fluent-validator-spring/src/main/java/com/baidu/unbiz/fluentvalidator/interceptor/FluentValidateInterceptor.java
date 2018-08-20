@@ -132,8 +132,11 @@ public class FluentValidateInterceptor implements MethodInterceptor, Initializin
         Preconditions.checkState(targetClass != null, "Target class should NOT be NULL!");
 
         try {
+            //方法参数列表
             Object[] arguments = invocation.getArguments();
+            //方法参数类型列表
             Class<?>[] parameterTypes = invocation.getMethod().getParameterTypes();
+
             Method implMethod = ReflectionUtil.getMethod(targetClass, invocation.getMethod().getName(), parameterTypes);
             Annotation[][] paramAnnotations = implMethod.getParameterAnnotations();
             if (paramAnnotations != null) {
@@ -144,6 +147,7 @@ public class FluentValidateInterceptor implements MethodInterceptor, Initializin
                         continue start;
                     }
                     for (int j = 0; j < paramAnnotation.length; j++) {
+                        //如果参数标注了FluentValid注解
                         if (paramAnnotation[j].annotationType() == FluentValid.class) {
                             LOGGER.debug("Find @FluentValid annotation on index[" + i + "] parameter and ready to "
                                     + "validate for method " + implMethod);
@@ -162,6 +166,7 @@ public class FluentValidateInterceptor implements MethodInterceptor, Initializin
                             }
                             ComplexResult result;
                             if (Collection.class.isAssignableFrom(parameterTypes[i])) {
+                                //列表类型的参数
                                 result = fluentValidator
                                         .on(arguments[i], addOnValidatorChain)
                                         .onEach((Collection) arguments[i],
@@ -173,6 +178,7 @@ public class FluentValidateInterceptor implements MethodInterceptor, Initializin
                                         .doValidate(callback)
                                         .result(toComplex());
                             } else if (parameterTypes[i].isArray()) {
+                                //数组类型的参数
                                 result = fluentValidator
                                         .on(arguments[i], addOnValidatorChain)
                                         .onEach(ArrayUtil.toWrapperIfPrimitive(arguments[i]),
@@ -184,6 +190,7 @@ public class FluentValidateInterceptor implements MethodInterceptor, Initializin
                                         .doValidate(callback)
                                         .result(toComplex());
                             } else {
+                                //其他类型的参数
                                 result = fluentValidator
                                         .on(arguments[i], addOnValidatorChain)
                                         .on(arguments[i],

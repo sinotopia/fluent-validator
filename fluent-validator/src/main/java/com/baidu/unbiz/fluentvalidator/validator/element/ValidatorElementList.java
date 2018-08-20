@@ -31,7 +31,7 @@ public class ValidatorElementList {
     /**
      * 获取待验证对象及其验证器链表长度
      *
-     * @return 联调长度
+     * @return 链表长度
      */
     public int size() {
         return validatorElementLinkedList.size();

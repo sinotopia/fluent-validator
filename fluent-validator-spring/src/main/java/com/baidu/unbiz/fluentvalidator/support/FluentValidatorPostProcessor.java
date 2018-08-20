@@ -17,7 +17,6 @@ public interface FluentValidatorPostProcessor {
      *
      * @param fluentValidator  FluentValidator，还未执行doValidate方法
      * @param methodInvocation 拦截器拦截的执行的方法
-     *
      * @return FluentValidator
      */
     FluentValidator postProcessBeforeDoValidate(FluentValidator fluentValidator, MethodInvocation methodInvocation);

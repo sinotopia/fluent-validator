@@ -18,7 +18,6 @@ public class CollectionUtil {
      * 创建<code>ArrayList</code>实例
      *
      * @param <E>
-     *
      * @return <code>ArrayList</code>实例
      */
     public static <E> ArrayList<E> createArrayList() {
@@ -30,7 +29,6 @@ public class CollectionUtil {
      *
      * @param <E>
      * @param initialCapacity 初始化容量
-     *
      * @return <code>ArrayList</code>实例
      */
     public static <E> ArrayList<E> createArrayList(int initialCapacity) {
@@ -41,7 +39,6 @@ public class CollectionUtil {
      * 创建<code>LinkedList</code>实例
      *
      * @param <E>
-     *
      * @return <code>LinkedList</code>实例
      */
     public static <E> LinkedList<E> createLinkedList() {
@@ -54,7 +51,6 @@ public class CollectionUtil {
      * @param <K>
      * @param <V>
      * @param initialCapacity 初始化容量
-     *
      * @return <code>HashMap</code>实例
      */
     public static <K, V> HashMap<K, V> createHashMap(int initialCapacity) {
@@ -65,9 +61,7 @@ public class CollectionUtil {
      * 判断<code>Collection</code>是否为<code>null</code>或空数组<code>[]</code>。
      *
      * @param collection
-     *
      * @return 如果为空, 则返回<code>true</code>
-     *
      * @see Collection
      */
     public static boolean isEmpty(Collection<?> collection) {
@@ -79,9 +73,7 @@ public class CollectionUtil {
      *
      * @param fromList 源列表
      * @param function 转换函数
-     *
      * @return 新列表
-     *
      * @see Function
      */
     public static <F, T> List<T> transform(Collection<F> fromList, Function<? super F, ? extends T> function) {

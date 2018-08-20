@@ -84,7 +84,6 @@ public class MessageSupport {
      * 获取国际化消息
      *
      * @param code 消息key
-     *
      * @return 消息
      */
     public static String getText(String code) {
@@ -96,7 +95,6 @@ public class MessageSupport {
      *
      * @param code 消息key
      * @param args 参数列表
-     *
      * @return 消息
      */
     public static String getText(String code, Object... args) {
@@ -109,7 +107,6 @@ public class MessageSupport {
      * @param code   消息key
      * @param args   参数列表
      * @param locale 语言地区
-     *
      * @return 消息
      */
     public static String getText(String code, Object[] args, Locale locale) {

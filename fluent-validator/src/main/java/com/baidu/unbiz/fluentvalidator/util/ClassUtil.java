@@ -16,9 +16,7 @@ public class ClassUtil {
      * 创建指定类的实例。
      *
      * @param clazz 要创建实例的类
-     *
      * @return 指定类的实例
-     *
      * @throws ClassInstantiationException 如果实例化失败
      */
     public static <T> T newInstance(Class<T> clazz) throws ClassInstantiationException {

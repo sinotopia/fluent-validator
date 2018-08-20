@@ -68,7 +68,7 @@ public class FluentValidator {
     private ValidatorContext context = new ValidatorContext();
 
     /**
-     * 验证结果，仅内部使用，外部使用验证结果需要使用{@link #result(ResultCollector)}来做收殓处理
+     * 验证结果，仅内部使用，外部使用验证结果需要使用{@link #result(ResultCollector)}来做收敛处理
      */
     private ValidationResult result = new ValidationResult();
 
@@ -94,7 +94,6 @@ public class FluentValidator {
      *
      * @param key   键
      * @param value 值
-     *
      * @return FluentValidator
      */
     public FluentValidator putAttribute2Context(String key, Object value) {
@@ -110,7 +109,6 @@ public class FluentValidator {
      *
      * @param key   键
      * @param value 闭包
-     *
      * @return FluentValidator
      */
     public FluentValidator putClosure2Context(String key, Closure value) {
@@ -154,7 +152,6 @@ public class FluentValidator {
      * 创建<tt>FluentValidator</tt>
      *
      * @param groups 分组
-     *
      * @return FluentValidator
      */
     public static FluentValidator checkAll(Class... groups) {
@@ -165,7 +162,6 @@ public class FluentValidator {
      * 使用已经存在的一个验证上下文，共享context本身以及验证结果
      *
      * @param context 验证上下文
-     *
      * @return FluentValidator
      */
     public FluentValidator withContext(ValidatorContext context) {
@@ -198,7 +194,6 @@ public class FluentValidator {
      * 如果启用通过{@link com.baidu.unbiz.fluentvalidator.annotation.FluentValidate}注解方式的验证，需要寻找验证器实例，这里配置注册中心的步骤
      *
      * @param registry 验证器注册查找器
-     *
      * @return FluentValidator
      */
     public FluentValidator configure(Registry registry) {
@@ -212,7 +207,6 @@ public class FluentValidator {
      * 需要保证{@link #configure(Registry)}已经先执行配置完毕<code>Registry</code>
      *
      * @param t 待验证对象
-     *
      * @return FluentValidator
      */
     public <T> FluentValidator on(T t) {
@@ -229,7 +223,6 @@ public class FluentValidator {
      * 注：当数组为空时，则会跳过
      *
      * @param t 待验证对象
-     *
      * @return FluentValidator
      */
     public <T> FluentValidator onEach(T[] t) {
@@ -248,7 +241,6 @@ public class FluentValidator {
      * 注：当集合为空时，则会跳过
      *
      * @param t 待验证对象
-     *
      * @return FluentValidator
      */
     public <T> FluentValidator onEach(Collection<T> t) {
@@ -272,7 +264,6 @@ public class FluentValidator {
      * 需要保证{@link #configure(Registry)}已经先执行配置完毕<code>Registry</code>
      *
      * @param t 待验证对象
-     *
      * @return FluentValidator
      */
     //TODO That would be much more easier if leveraging Java8 lambda feature
@@ -342,7 +333,6 @@ public class FluentValidator {
      *
      * @param t 待验证对象
      * @param v 验证器
-     *
      * @return FluentValidator
      */
     public <T> FluentValidator on(T t, Validator<T> v) {
@@ -358,7 +348,6 @@ public class FluentValidator {
      *
      * @param t     待验证对象
      * @param chain 验证器链
-     *
      * @return FluentValidator
      */
     public <T> FluentValidator on(T t, ValidatorChain chain) {
@@ -384,7 +373,6 @@ public class FluentValidator {
      *
      * @param t 待验证对象数组
      * @param v 验证器
-     *
      * @return FluentValidator
      */
     public <T> FluentValidator onEach(T[] t, final Validator<T> v) {
@@ -404,7 +392,6 @@ public class FluentValidator {
      *
      * @param t 待验证对象集合
      * @param v 验证器
-     *
      * @return FluentValidator
      */
     public <T> FluentValidator onEach(Collection<T> t, final Validator<T> v) {
@@ -440,7 +427,6 @@ public class FluentValidator {
      * 当满足<code>expression</code>条件时，才去使用前一个{@link Validator}或者{@link ValidatorChain}来验证
      *
      * @param expression 满足条件表达式
-     *
      * @return FluentValidator
      */
     public FluentValidator when(boolean expression) {
@@ -465,9 +451,7 @@ public class FluentValidator {
      * 按照指定验证回调条件，开始使用验证
      *
      * @param cb 验证回调
-     *
      * @return FluentValidator
-     *
      * @see ValidateCallback
      */
     public FluentValidator doValidate(ValidateCallback cb) {
@@ -534,7 +518,6 @@ public class FluentValidator {
      * &lt;T&gt;是验证结果的泛型
      *
      * @param resultCollector 验证结果收集器
-     *
      * @return 对外验证结果
      */
     public <T> T result(ResultCollector<T> resultCollector) {
@@ -545,7 +528,6 @@ public class FluentValidator {
      * 设置分组
      *
      * @param groups 分组
-     *
      * @return FluentValidator
      */
     public FluentValidator setGroups(Class<?>[] groups) {
@@ -557,7 +539,6 @@ public class FluentValidator {
      * 设置是否快速失败
      *
      * @param isFailFast 是否快速失败
-     *
      * @return FluentValidator
      */
     public FluentValidator setIsFailFast(boolean isFailFast) {
@@ -569,7 +550,6 @@ public class FluentValidator {
      * 设置排除的分组
      *
      * @param excludeGroups 排除分组
-     *
      * @return FluentValidator
      */
     public FluentValidator setExcludeGroups(Class<?>[] excludeGroups) {
@@ -584,7 +564,7 @@ public class FluentValidator {
      * @param v 验证器
      * @param t 待验证对象
      */
-    private <T>  void composeIfPossible(Validator<T> v, T t) {
+    private <T> void composeIfPossible(Validator<T> v, T t) {
         final FluentValidator self = this;
         if (v instanceof ValidatorHandler) {
             ((ValidatorHandler) v).compose(self, context, t);

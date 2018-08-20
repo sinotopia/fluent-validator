@@ -16,7 +16,6 @@ public class LocaleUtil {
      * </p>
      *
      * @param localeString 要解析的字符串
-     *
      * @return <code>Locale</code>对象，如果locale字符串为空，则返回<code>null</code>
      */
     public static Locale parseLocale(String localeString) {

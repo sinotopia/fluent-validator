@@ -20,7 +20,6 @@ public class ArrayUtil {
      * </pre>
      *
      * @param array 要检查的数组
-     *
      * @return 如果不为空, 则返回<code>true</code>
      */
     public static <T> boolean isEmpty(T[] arrary) {
@@ -63,7 +62,6 @@ public class ArrayUtil {
      *
      * @param from   基础数组
      * @param target 目标数组，看是否存在于基础数组中
-     *
      * @return 如果有交集, 则返回<code>true</code>
      */
     public static <T> boolean hasIntersection(T[] from, T[] target) {
@@ -90,7 +88,6 @@ public class ArrayUtil {
      * 如果<code>froms</code>不为基本类型数组，则返回<code>null</code>
      *
      * @param froms 基本类型数组
-     *
      * @return 包装类数组，如果<code>froms</code>为<code>null</code>，则返回<code>null</code>；<br>
      * 如果<code>froms</code>不为基本类型数组，则返回<code>null</code>
      */

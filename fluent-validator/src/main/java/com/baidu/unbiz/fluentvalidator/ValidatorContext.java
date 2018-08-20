@@ -58,7 +58,6 @@ public class ValidatorContext {
      * 获取属性
      *
      * @param key 键
-     *
      * @return 值
      */
     public Object getAttribute(String key) {
@@ -73,7 +72,6 @@ public class ValidatorContext {
      *
      * @param key   键
      * @param clazz 值类型
-     *
      * @return 值
      */
     public <T> T getAttribute(String key, Class<T> clazz) {
@@ -91,7 +89,6 @@ public class ValidatorContext {
      * 获取闭包
      *
      * @param key 闭包名称
-     *
      * @return 闭包
      */
     public Closure getClosure(String key) {

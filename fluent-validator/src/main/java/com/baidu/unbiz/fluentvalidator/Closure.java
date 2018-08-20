@@ -25,7 +25,6 @@ public interface Closure<T> {
      * Wrap {@link #execute(Object...)} and {@link #getResult()}
      *
      * @param input the input to execute on
-     *
      * @return result object
      */
     T executeAndGetResult(Object... input);

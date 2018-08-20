@@ -26,9 +26,9 @@ public class ConcurrentCache<K, V> implements Computable<K, V> {
      *
      * @param key      查找关键字
      * @param callable # @see Callable
-     *
      * @return 计算结果
      */
+    @Override
     public V get(K key, Callable<V> callable) {
         Future<V> future = concurrentMap.get(key);
         if (future == null) {

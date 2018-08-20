@@ -13,7 +13,7 @@ import java.util.List;
 public class AnnotationValidator {
 
     /**
-     * 在POJO中定义中待验证的属性名称
+     * 在POJO中定义的待验证的属性名称
      */
     private Field field;
 

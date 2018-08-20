@@ -1,7 +1,7 @@
 package com.baidu.unbiz.fluentvalidator;
 
 /**
- * 验证器接口。
+ * 验证器接口
  * <p/>
  * 泛型<t>T</t>表示待验证对象的类型
  *
@@ -16,7 +16,6 @@ public interface Validator<T> {
      *
      * @param context 验证上下文
      * @param t       待验证对象
-     *
      * @return 是否接受验证
      */
     boolean accept(ValidatorContext context, T t);
@@ -29,7 +28,6 @@ public interface Validator<T> {
      *
      * @param context 验证上下文
      * @param t       待验证对象
-     *
      * @return 是否验证通过
      */
     boolean validate(ValidatorContext context, T t);
